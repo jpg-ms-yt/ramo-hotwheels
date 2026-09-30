@@ -1,0 +1,105 @@
+/* Estilos Base y Fondo Oscuro Neón */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #030814;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.oculto {
+  display: none !important;
+}
+
+/* Pantalla de Carga */
+#pantalla-carga {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#texto-carga {
+  color: #58a6ff;
+  font-size: 1.6rem;
+}
+
+.animacion-carrito {
+  font-size: 2.5rem;
+  margin: 20px 0;
+  animation: mover 1.5s infinite alternate ease-in-out;
+}
+
+@keyframes mover {
+  from { transform: translateX(-40px); }
+  to { transform: translateX(40px); }
+}
+
+#porcentaje {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Título estilo neón */
+.titulo {
+  font-size: 1.8rem;
+  color: #8bb8f6;
+  margin: 20px 10px;
+  text-shadow: 0 0 10px rgba(139, 184, 246, 0.5);
+}
+
+/* Ramo de Hot Wheels */
+.ramo-container {
+  position: relative;
+  margin: 15px 0;
+}
+
+.luna {
+  font-size: 2rem;
+  position: absolute;
+  top: -15px;
+  right: -5px;
+}
+
+.imagen-ramo {
+  width: 250px;
+  max-width: 80vw;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(88, 166, 255, 0.3);
+}
+
+/* Tarjeta Interactiva */
+.tarjeta-hotwheels {
+  background: #111;
+  border: 3px solid #ea384d;
+  border-radius: 15px;
+  padding: 10px;
+  width: 260px;
+  margin: 15px auto;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(234, 56, 77, 0.5);
+  transition: transform 0.2s ease;
+}
+
+.tarjeta-hotwheels:hover {
+  transform: scale(1.03);
+}
+
+.imagen-carrito-card {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+}
+
+.pista {
+  font-size: 0.8rem;
+  color: #f1c40f;
+  margin-top: 8px;
+}
