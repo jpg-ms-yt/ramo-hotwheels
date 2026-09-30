@@ -17,9 +17,8 @@
 
   <!-- Contenido Principal -->
   <div id="contenido-principal" class="oculto">
-    <h1 class="titulo">Feliz Día de los Carritos de Hot Wheels</h1>
-
-    <!-- Ramo de Flores con Hot Wheels -->
+    <h1 class="titulo-neon">Feliz Día de los Carritos de Hot Wheels</h1>
+    
     <div class="ramo-container">
       <div class="luna">🌕</div>
       <img src="Imágenes/carrinho2.jpg" alt="Ramo de Hot Wheels" class="imagen-ramo">
@@ -35,33 +34,41 @@
   </div>
 
   <script>
-    // Pantalla de Carga 0% a 100%
-    let porcentaje = 0;
-    const elementoPorcentaje = document.getElementById('porcentaje');
+    // Simulación de pantalla de carga
+    let progreso = 0;
+    const porcentajeTexto = document.getElementById('porcentaje');
     const pantallaCarga = document.getElementById('pantalla-carga');
-    const contenido = document.getElementById('contenido-principal');
+    const contenidoPrincipal = document.getElementById('contenido-principal');
 
     const intervalo = setInterval(() => {
-      porcentaje += 2;
-      elementoPorcentaje.textContent = porcentaje + '%';
+      progreso += 2;
+      porcentajeTexto.textContent = progreso + '%';
 
-      if (porcentaje >= 100) {
+      if (progreso >= 100) {
         clearInterval(intervalo);
-        pantallaCarga.style.display = 'none';
-        contenido.classList.remove('oculto');
+        pantallaCarga.classList.add('oculto');
+        contenidoPrincipal.classList.remove('oculto');
       }
     }, 40);
 
     // Lista de tarjetas intercambiables
     const tarjetas = [
-  "Imágenes/carrinho1.jpg",
-  "Imágenes/ramo.png"
-];
+      "Imágenes/carrinho1.jpg",
+      "Imágenes/ramo.png"
+    ];
+
     let indice = 0;
 
     function cambiarCarta() {
       indice = (indice + 1) % tarjetas.length;
-      document.getElementById('imagen-carrito').src = tarjetas[indice];
+      const img = document.getElementById('imagen-carrito');
+      
+      // Efecto suave al cambiar
+      img.style.opacity = 0;
+      setTimeout(() => {
+        img.src = tarjetas[indice];
+        img.style.opacity = 1;
+      }, 200);
     }
   </script>
 </body>
